@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LYP — Senior Product Experience Designer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#313030",
+                    "on-secondary-container": "#bab8b7",
+                    "surface": "#1f0f0f",
+                    "on-surface": "#fbdbda",
+                    "on-primary-fixed": "#410007",
+                    "surface-container-low": "#281717",
+                    "primary-container": "#c8102e",
+                    "on-primary": "#680011",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed": "#001f28",
+                    "primary": "#ffb3b1",
+                    "surface-container-high": "#382525",
+                    "on-error": "#690005",
+                    "secondary-container": "#4a4949",
+                    "tertiary": "#82d1ed",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#004e60",
+                    "primary-fixed-dim": "#ffb3b1",
+                    "surface-bright": "#483434",
+                    "tertiary-fixed-dim": "#82d1ed",
+                    "surface-tint": "#ffb3b1",
+                    "on-primary-container": "#ffdad8",
+                    "tertiary-fixed": "#b6ebff",
+                    "on-surface-variant": "#e5bdbb",
+                    "inverse-on-surface": "#3f2c2b",
+                    "surface-container-highest": "#43302f",
+                    "surface-container-lowest": "#190a0a",
+                    "inverse-surface": "#fbdbda",
+                    "surface-container": "#2c1b1b",
+                    "on-primary-fixed-variant": "#92001c",
+                    "secondary-fixed": "#e5e2e1",
+                    "secondary": "#c8c6c5",
+                    "surface-variant": "#43302f",
+                    "surface-dim": "#1f0f0f",
+                    "on-tertiary-container": "#b6ebff",
+                    "on-secondary-fixed-variant": "#474646",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-tertiary": "#003543",
+                    "outline": "#ac8887",
+                    "background": "#1f0f0f",
+                    "inverse-primary": "#bf0229",
+                    "outline-variant": "#5c403f",
+                    "on-background": "#fbdbda",
+                    "tertiary-container": "#006e87",
+                    "primary-fixed": "#ffdad8",
+                    "on-error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-xl": "128px",
+                    "stack-md": "32px",
+                    "margin-mobile": "24px",
+                    "gutter": "24px",
+                    "stack-lg": "64px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "stack-sm": "16px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "300"}],
+                    "display-xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "300"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-lg": ["80px", {"lineHeight": "80px", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0D0D0D;
+            color: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .border-sep {
+            border-color: #2A2A2A;
+        }
+
+        .swiss-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+
+        .crimson-accent {
+            background-color: #C8102E;
+        }
+
+        .nav-link-active::after {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #ffb3b1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-16 py-6 border-b border-sep bg-black/50 backdrop-blur-sm">
+<div class="font-display-lg text-headline-md font-bold text-on-surface uppercase tracking-tighter">
+            LYP
+        </div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="relative font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold nav-link-active" href="#">Home</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Works</a>
+<a class="ml-4 px-6 py-2 border border-sep font-label-sm text-label-sm uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 active:scale-95" href="#">Contact</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<main class="min-h-screen pt-32 px-16 swiss-grid items-center relative overflow-hidden">
+<!-- Background Decor -->
+<div class="absolute top-0 right-0 w-1/2 h-full -z-10 opacity-10">
+
+</div>
+<!-- Left Column: Personal Info Card -->
+<div class="col-span-12 md:col-span-4 self-start reveal" id="info-card">
+<div class="border border-sep bg-surface-container-lowest/40 backdrop-blur-md p-8 flex flex-col gap-0">
+<div class="mb-10">
+<h2 class="font-headline-lg text-[42px] leading-tight font-bold tracking-tighter">LY PING</h2>
+<p class="font-label-sm text-label-sm text-[#888] uppercase mt-2 tracking-[0.2em]">Designer &amp; Strategist</p>
+</div>
+<!-- Info Rows -->
+<div class="flex flex-col">
+<div class="py-6 border-t border-sep">
+<span class="block text-[11px] uppercase tracking-[0.2em] text-[#888] mb-1">Education</span>
+<span class="block font-body-md text-[16px] text-white">Bachelor's Degree</span>
+</div>
+<div class="py-6 border-t border-sep">
+<span class="block text-[11px] uppercase tracking-[0.2em] text-[#888] mb-1">Experience</span>
+<span class="block font-body-md text-[16px] text-white">6+ Years Professional</span>
+</div>
+<div class="py-6 border-t border-sep">
+<span class="block text-[11px] uppercase tracking-[0.2em] text-[#888] mb-1">Location</span>
+<span class="block font-body-md text-[16px] text-white">Shenzhen, China</span>
+</div>
+<div class="py-6 border-t border-sep">
+<span class="block text-[11px] uppercase tracking-[0.2em] text-[#888] mb-1">Email</span>
+<span class="block font-body-md text-[16px] text-white">617266805@qq.com</span>
+</div>
+<div class="py-6 border-t border-sep">
+<span class="block text-[11px] uppercase tracking-[0.2em] text-[#888] mb-1">Phone</span>
+<span class="block font-body-md text-[16px] text-white">+86 136 1291 6897</span>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-sep flex gap-4">
+<a class="w-10 h-10 border border-sep flex items-center justify-center hover:bg-white hover:text-black transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</a>
+<a class="w-10 h-10 border border-sep flex items-center justify-center hover:bg-white hover:text-black transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Center/Right Column: Typographic Block -->
+<div class="col-span-12 md:col-span-8 md:pl-12 flex flex-col justify-center reveal" style="transition-delay: 200ms;">
+<div class="max-w-4xl">
+<h1 class="font-display-xl text-[72px] md:text-[96px] leading-[0.95] font-bold text-white tracking-tighter mb-8">
+                    Senior Product Experience Designer
+                </h1>
+<div class="w-20 h-0.5 crimson-accent mb-8"></div>
+<div class="flex flex-col gap-12">
+<div>
+<span class="text-[13px] uppercase tracking-[0.4em] text-primary-fixed-dim font-bold block mb-4">
+                            Currently Seeking: Senior Design Roles in AI &amp; SaaS
+                        </span>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                            Specializing in high-fidelity architectural interfaces and system-driven product design. I bridge the gap between technical complexity and human intuition through rigorous Swiss-inspired aesthetics.
+                        </p>
+</div>
+<div class="flex items-center gap-6">
+<button class="px-10 py-5 crimson-accent text-white font-label-sm text-label-sm uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all">
+                            View Portfolio
+                        </button>
+<button class="px-10 py-5 border border-sep text-white font-label-sm text-label-sm uppercase tracking-widest hover:bg-white hover:text-black active:scale-95 transition-all">
+                            About Me
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Status -->
+<div class="col-span-12 flex justify-between items-end pb-12 mt-12 reveal" style="transition-delay: 400ms;">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+<span class="text-[11px] uppercase tracking-[0.2em] text-[#888]">Available for projects</span>
+</div>
+<div class="text-[11px] uppercase tracking-[0.2em] text-[#888]">
+                EST. 2018 — ARCHIVE V4.0
+            </div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full px-16 py-8 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-sep bg-surface-container-lowest">
+<div class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant">
+            © 2024 LY PING. ALL RIGHTS RESERVED.
+        </div>
+<div class="flex gap-12">
+<a class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant hover:text-primary transition-colors" href="#">Dribbble</a>
+</div>
+</footer>
+<script>
+        // Reveal animation on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.reveal');
+            setTimeout(() => {
+                elements.forEach(el => el.classList.add('active'));
+            }, 100);
+        });
+
+        // Simple mouse follow effect for background depth
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) / 100;
+            const moveY = (e.clientY - window.innerHeight / 2) / 100;
+            const card = document.getElementById('info-card');
+            if (card) {
+                card.style.transform = `translate(${moveX}px, ${moveY + 24}px)`; // Added base 24px for active state
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#313030",
+            "on-secondary-container": "#bab8b7",
+            "surface": "#1f0f0f",
+            "on-surface": "#fbdbda",
+            "on-primary-fixed": "#410007",
+            "surface-container-low": "#281717",
+            "primary-container": "#c8102e",
+            "on-primary": "#680011",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed": "#001f28",
+            "primary": "#ffb3b1",
+            "surface-container-high": "#382525",
+            "on-error": "#690005",
+            "secondary-container": "#4a4949",
+            "tertiary": "#82d1ed",
+            "on-secondary-fixed": "#1c1b1b",
+            "error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#004e60",
+            "primary-fixed-dim": "#ffb3b1",
+            "surface-bright": "#483434",
+            "tertiary-fixed-dim": "#82d1ed",
+            "surface-tint": "#ffb3b1",
+            "on-primary-container": "#ffdad8",
+            "tertiary-fixed": "#b6ebff",
+            "on-surface-variant": "#e5bdbb",
+            "inverse-on-surface": "#3f2c2b",
+            "surface-container-highest": "#43302f",
+            "surface-container-lowest": "#190a0a",
+            "inverse-surface": "#fbdbda",
+            "surface-container": "#2c1b1b",
+            "on-primary-fixed-variant": "#92001c",
+            "secondary-fixed": "#e5e2e1",
+            "secondary": "#c8c6c5",
+            "surface-variant": "#43302f",
+            "surface-dim": "#1f0f0f",
+            "on-tertiary-container": "#b6ebff",
+            "on-secondary-fixed-variant": "#474646",
+            "secondary-fixed-dim": "#c8c6c5",
+            "on-tertiary": "#003543",
+            "outline": "#ac8887",
+            "background": "#1f0f0f",
+            "inverse-primary": "#bf0229",
+            "outline-variant": "#5c403f",
+            "on-background": "#fbdbda",
+            "tertiary-container": "#006e87",
+            "primary-fixed": "#ffdad8",
+            "on-error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0rem",
+            "lg": "0rem",
+            "xl": "0rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "stack-xl": "128px",
+            "stack-md": "32px",
+            "margin-mobile": "24px",
+            "gutter": "24px",
+            "stack-lg": "64px",
+            "unit": "8px",
+            "margin-desktop": "64px",
+            "stack-sm": "16px"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "display-xl": ["Inter"],
+            "headline-md": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "display-lg": ["Inter"]
+          },
+          "fontSize": {
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+            "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "300"}],
+            "display-xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "300"}],
+            "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "display-lg": ["80px", {"lineHeight": "80px", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #0D0D0D; /* Swiss Minimalist strict background override */
+      color: #FFFFFF;
+      overflow-x: hidden;
+    }
+    
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-link-underline {
+      position: relative;
+    }
+    .nav-link-underline::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background-color: currentColor;
+      transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nav-link-underline:hover::after {
+      width: 100%;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: color 0.3s ease;
+    }
+
+    /* Custom scrollbar for Swiss precision */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #0D0D0D; }
+    ::-webkit-scrollbar-thumb { background: #C8102E; }
+  </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TOP NAV BAR (Shared Component Context) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 bg-transparent border-b border-outline-variant/10">
+<div class="font-display-lg text-headline-md font-bold text-on-surface uppercase tracking-tighter">
+      LYP
+    </div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="font-label-sm text-label-sm uppercase text-on-surface font-medium hover:text-primary transition-colors duration-300 nav-link-underline" href="#">Home</a>
+<a class="font-label-sm text-label-sm uppercase text-primary font-bold border-b border-primary" href="#">About</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface font-medium hover:text-primary transition-colors duration-300 nav-link-underline" href="#">Works</a>
+<a class="ml-4 px-6 py-2 bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-widest scale-95 active:scale-90 transition-all hover:brightness-110" href="#">Contact</a>
+</nav>
+</header>
+<main class="min-h-screen pt-stack-xl pb-stack-xl px-margin-desktop">
+<div class="max-w-[1440px] mx-auto">
+<!-- HERO / ABOUT SECTION -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<!-- Left Column (60%) -->
+<div class="md:col-span-7 flex flex-col gap-stack-md scroll-reveal" id="about-content">
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#C8102E]">ABOUT</span>
+<div class="h-[1px] w-12 bg-outline-variant"></div>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-white max-w-xl">
+            Product Designer · 8 Years
+          </h1>
+<div class="max-w-2xl">
+<p class="text-[14px] leading-[1.8] text-[#888888] font-light">
+              Specializing in the intricate landscape of SaaS and B2B enterprise solutions, I bridge the gap between complex system architecture and intuitive human experiences. Over the past eight years, my journey has been defined by a commitment to Swiss-inspired rigor—where every pixel serves a functional purpose. I have partnered with high-growth technology companies to deconstruct dense workflows into streamlined, high-conversion interfaces. My approach is rooted in data-driven empathy, ensuring that even the most technical tool feels seamless and empowering for the end-user.
+            </p>
+<p class="mt-6 text-[14px] leading-[1.8] text-[#888888] font-light">
+              Based at the intersection of logic and aesthetics, I continue to push the boundaries of digital product design through disciplined experimentation and structural integrity.
+            </p>
+</div>
+<!-- Professional Stats Grid (Bento Style Lite) -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-unit mt-stack-md">
+<div class="p-6 border border-outline-variant hover:border-primary-container transition-colors duration-500">
+<span class="block font-label-sm text-label-sm text-[#888888] mb-2 uppercase">Experience</span>
+<span class="font-headline-md text-white">8+ Yrs</span>
+</div>
+<div class="p-6 border border-outline-variant hover:border-primary-container transition-colors duration-500">
+<span class="block font-label-sm text-label-sm text-[#888888] mb-2 uppercase">Focus</span>
+<span class="font-headline-md text-white">SaaS</span>
+</div>
+<div class="p-6 border border-outline-variant hover:border-primary-container transition-colors duration-500 md:col-span-1 col-span-2">
+<span class="block font-label-sm text-label-sm text-[#888888] mb-2 uppercase">Projects</span>
+<span class="font-headline-md text-white">120+</span>
+</div>
+</div>
+</div>
+<!-- Spacer / Empty Grid Columns if needed or alignment -->
+<div class="hidden md:block md:col-span-1"></div>
+<!-- Right Column (40% roughly, using remainder of grid) -->
+<div class="md:col-span-4 flex flex-col gap-stack-md scroll-reveal" id="connect-content">
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#C8102E]">CONNECT</span>
+</div>
+<ul class="flex flex-col border-t border-outline-variant">
+<li>
+<a class="social-link group py-6 border-b border-outline-variant nav-link-underline inline-flex w-full" href="#">
+<span class="text-[14px] text-[#888888] group-hover:text-white transition-colors duration-300">→</span>
+<span class="text-[14px] text-[#888888] group-hover:text-white transition-colors duration-300 uppercase tracking-widest">Zcool</span>
+</a>
+</li>
+<li>
+<a class="social-link group py-6 border-b border-outline-variant nav-link-underline inline-flex w-full" href="#">
+<span class="text-[14px] text-[#888888] group-hover:text-white transition-colors duration-300">→</span>
+<span class="text-[14px] text-[#888888] group-hover:text-white transition-colors duration-300 uppercase tracking-widest">Dribbble</span>
+</a>
+</li>
+<li>
+<a class="social-link group py-6 border-b border-outline-variant nav-link-underline inline-flex w-full" href="#">
+<span class="text-[14px] text-[#888888] group-hover:text-white transition-colors duration-300">→</span>
+<span class="text-[14px] text-[#888888] group-hover:text-white transition-colors duration-300 uppercase tracking-widest">Behance</span>
+</a>
+</li>
+<li>
+<a class="social-link group py-6 border-b border-outline-variant nav-link-underline inline-flex w-full" href="#">
+<span class="text-[14px] text-[#888888] group-hover:text-white transition-colors duration-300">→</span>
+<span class="text-[14px] text-[#888888] group-hover:text-white transition-colors duration-300 uppercase tracking-widest">UI China</span>
+</a>
+</li>
+</ul>
+<!-- Subtle Visual Anchor -->
+<div class="mt-stack-md relative aspect-square w-full overflow-hidden grayscale brightness-50 hover:grayscale-0 hover:brightness-100 transition-all duration-1000">
+<img alt="Portrait of a modern designer" class="object-cover w-full h-full" data-alt="A moody, high-contrast black and white portrait of a focused product designer in a minimalist studio setting. The lighting is dramatic and sharp, highlighting clean silhouettes and geometric architectural details in the background. The aesthetic is strictly professional and Swiss-minimalist, using deep shadows and bright highlights to create a sense of intellectual authority and sophisticated design precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJNL4F63ySztHdOjme5fQzO_s6EF7mTsyWiOY-boMHjCKbadkS8_eLHhAaFIJNVtNyc2YneUIsADL2zQhRzAHwwDTD308UagkCUd9LqV5Tw8p0i_r_K_2kzOCtwh0xi4uF8u6huQFZxtIyekmCvwtfYtdqmFuPiunyw9Sor6enZQryRM23wQCRFJeLYzduYQXoxFUEdWqhbXq4kEju4U51HS1HIjBmBjSON_XANUf2lGfWUTedEuZfZYoAIE6Jk5yMKgsfuNt8Uao"/>
+<div class="absolute inset-0 border border-primary-container/20"></div>
+</div>
+</div>
+</section>
+<!-- Secondary Details / Philosophy (Asymmetric Layout) -->
+<section class="mt-stack-xl pt-stack-lg border-t border-outline-variant grid grid-cols-1 md:grid-cols-12 gap-gutter scroll-reveal">
+<div class="md:col-span-3">
+<span class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#C8102E]">PHILOSOPHY</span>
+</div>
+<div class="md:col-span-9">
+<h2 class="font-headline-md text-white mb-stack-sm">The Discipline of Clarity</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<p class="text-[14px] leading-[1.8] text-[#888888] font-light">
+                    I believe that good design is invisible. In the world of B2B and SaaS, clarity is the ultimate luxury. My work strips away the superficial to focus on the core value proposition of every user action. 
+                </p>
+<p class="text-[14px] leading-[1.8] text-[#888888] font-light">
+                    By adhering to strict grid systems and typographic hierarchies, I ensure that information architecture remains scalable and accessible, no matter the complexity of the data.
+                </p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- FOOTER (Shared Component Context) -->
+<footer class="w-full px-margin-desktop py-stack-md flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container-lowest border-t border-outline-variant dark:border-outline-variant">
+<div class="font-headline-md text-headline-md font-black text-on-surface uppercase">LY PING</div>
+<div class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant">
+      © 2024 LY PING. ALL RIGHTS RESERVED.
+    </div>
+<div class="flex gap-10">
+<a class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant hover:text-primary transition-opacity" href="#">Instagram</a>
+<a class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant hover:text-primary transition-opacity" href="#">LinkedIn</a>
+<a class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant hover:text-primary transition-opacity" href="#">Dribbble</a>
+</div>
+</footer>
+<script>
+    // Scroll Animation Logic
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Custom Micro-interaction: Mouse cursor follower variant for designer vibe
+    const cursorDot = document.createElement('div');
+    cursorDot.style.cssText = `
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background-color: #C8102E;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode: difference;
+      transition: transform 0.1s ease;
+      display: none;
+    `;
+    document.body.appendChild(cursorDot);
+
+    document.addEventListener('mousemove', (e) => {
+      cursorDot.style.display = 'block';
+      cursorDot.style.left = e.clientX + 'px';
+      cursorDot.style.top = e.clientY + 'px';
+    });
+
+    // Hover effect for cursor
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        cursorDot.style.transform = 'scale(4)';
+        cursorDot.style.backgroundColor = 'white';
+      });
+      link.addEventListener('mouseleave', () => {
+        cursorDot.style.transform = 'scale(1)';
+        cursorDot.style.backgroundColor = '#C8102E';
+      });
+    });
+  </script>
+</body></html>

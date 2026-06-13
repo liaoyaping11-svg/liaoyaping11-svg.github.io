@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LYP | Designer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#313030",
+                        "on-secondary-container": "#bab8b7",
+                        "surface": "#000000",
+                        "on-surface": "#ffffff",
+                        "on-primary-fixed": "#410007",
+                        "surface-container-low": "#121212",
+                        "primary-container": "#c8102e",
+                        "on-primary": "#ffffff",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#001f28",
+                        "primary": "#ffb3b1",
+                        "surface-container-high": "#1a1a1a",
+                        "on-error": "#690005",
+                        "secondary-container": "#2a2a2a",
+                        "tertiary": "#82d1ed",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#004e60",
+                        "primary-fixed-dim": "#ffb3b1",
+                        "surface-bright": "#222222",
+                        "tertiary-fixed-dim": "#82d1ed",
+                        "surface-tint": "#ffb3b1",
+                        "on-primary-container": "#ffffff",
+                        "tertiary-fixed": "#b6ebff",
+                        "on-surface-variant": "#a1a1a1",
+                        "inverse-on-surface": "#000000",
+                        "surface-container-highest": "#333333",
+                        "surface-container-lowest": "#000000",
+                        "inverse-surface": "#ffffff",
+                        "surface-container": "#0a0a0a",
+                        "on-primary-fixed-variant": "#92001c",
+                        "secondary-fixed": "#e5e2e1",
+                        "secondary": "#c8c6c5",
+                        "surface-variant": "#1f1f1f",
+                        "surface-dim": "#000000",
+                        "on-tertiary-container": "#b6ebff",
+                        "on-secondary-fixed-variant": "#474646",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-tertiary": "#003543",
+                        "outline": "#444444",
+                        "background": "#000000",
+                        "inverse-primary": "#bf0229",
+                        "outline-variant": "#222222",
+                        "on-background": "#ffffff",
+                        "tertiary-container": "#006e87",
+                        "primary-fixed": "#ffdad8",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-xl": "128px",
+                        "stack-md": "32px",
+                        "margin-mobile": "24px",
+                        "gutter": "24px",
+                        "stack-lg": "64px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "300"}],
+                        "display-xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "300"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-lg": ["80px", {"lineHeight": "80px", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .loader-container {
+            background-color: #000000;
+            transition: opacity 300ms ease-out, visibility 300ms;
+        }
+
+        .monogram-glimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .monogram-glimmer::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.15),
+                transparent
+            );
+            animation: glimmer 2s infinite;
+        }
+
+        @keyframes glimmer {
+            0% { left: -150%; }
+            100% { left: 150%; }
+        }
+
+        .circular-loader {
+            width: 120px;
+            height: 120px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid #FFFFFF;
+            border-radius: 50%;
+            animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .content-canvas {
+            opacity: 0;
+            transition: opacity 800ms ease-in-out;
+            transition-delay: 200ms;
+        }
+
+        .loaded .content-canvas {
+            opacity: 1;
+        }
+        
+        .skeleton-line {
+            height: 1px;
+            background: #333333;
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: growLine 1s forwards cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        @keyframes growLine {
+            to { transform: scaleX(1); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- Loading Screen -->
+<div class="loader-container fixed inset-0 z-[100] flex items-center justify-center" id="loader">
+<div class="relative flex items-center justify-center">
+<!-- Circular Rotation -->
+<div class="circular-loader absolute"></div>
+<!-- Monogram Center -->
+<div class="monogram-glimmer z-10">
+<span class="font-display-lg text-headline-lg font-black text-white tracking-tighter uppercase block">LYP</span>
+</div>
+</div>
+<!-- Bottom Status Label -->
+<div class="absolute bottom-margin-desktop left-margin-desktop flex flex-col gap-unit">
+<div class="w-32 h-[1px] bg-outline-variant overflow-hidden">
+<div class="h-full bg-white animate-[glimmer_2s_infinite]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-[0.4em]">Initializing</span>
+</div>
+</div>
+<!-- Main Content Shell -->
+<div class="content-canvas min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 bg-background/80 backdrop-blur-md border-b border-outline-variant">
+<div class="font-display-lg text-headline-md font-bold text-primary uppercase tracking-tighter">
+            LYP
+        </div>
+<div class="hidden md:flex items-center gap-stack-md">
+<a class="text-white font-bold border-b-2 border-primary-container font-label-sm text-label-sm hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="text-on-surface-variant font-medium font-label-sm text-label-sm hover:text-white transition-colors duration-300" href="#">About</a>
+<a class="text-on-surface-variant font-medium font-label-sm text-label-sm hover:text-white transition-colors duration-300" href="#">Works</a>
+</div>
+<button class="bg-primary-container text-white px-6 py-2 font-label-sm text-label-sm uppercase tracking-widest scale-95 active:scale-90 transition-transform font-bold">
+            Contact
+        </button>
+</nav>
+<main class="flex-grow pt-stack-xl px-margin-desktop bg-background">
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter py-stack-lg">
+<!-- Large Typographic Header -->
+<div class="col-span-1 md:col-span-8 flex flex-col gap-stack-sm">
+<span class="font-label-sm text-label-sm text-primary-container uppercase tracking-[0.3em] font-bold">Curated Portfolio 2024</span>
+<h1 class="font-display-xl text-display-xl text-white uppercase leading-none">
+                    Rigorous <br/> Aesthetics
+                </h1>
+</div>
+<!-- Supporting Body -->
+<div class="col-span-1 md:col-span-4 self-end pb-4 border-l border-outline-variant pl-gutter">
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm">
+                    Defining the intersection of Swiss structural integrity and contemporary digital performance. 
+                </p>
+</div>
+</section>
+<!-- Project Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant border border-outline-variant mt-stack-lg">
+<!-- Project Card 1 -->
+<div class="group relative aspect-square bg-surface-container-lowest overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40 grayscale group-hover:opacity-60 group-hover:grayscale-0 transition-all duration-700" data-alt="A minimalist tech setup with silver industrial finishes and stark black edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvfvJYWJcY99HM_ONXb89eveqPao4EA0gM-_Z47t2-8X-T_09O7S-adSEf6g8HtyX2AjDVldOAyq9KguQ4jax9KLDywqvXgcPv7qvrUfBAGXgOeO2Vz_v6u7TWIASnMcyvKsbmcU3YayZrUChaUYjcYu60BYKkpRr_mgjsNbbAtvVaViizB_GDPnLuAGzZHTSWVrxYR7IN5vT4PKyAbjKoJYo-yxVaryhomGBigzmda2cGY4nWZI981ulGx1iYQCF1aD68ZyyT-Gk"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+<div class="relative z-10 h-full flex flex-col justify-between p-stack-md">
+<span class="font-label-sm text-label-sm text-white/70 uppercase tracking-widest">01 / BRANDING</span>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-white uppercase mb-2">NEURAL ARCH</h3>
+<div class="w-12 h-1 bg-primary-container"></div>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group relative aspect-square bg-surface-container-lowest overflow-hidden border-l border-outline-variant">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40 grayscale group-hover:opacity-60 group-hover:grayscale-0 transition-all duration-700" data-alt="Abstract structural architecture featuring deep shadows and crimson red neon light strips." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCRSiUmnBs-IIXDDgoDpzhKPEDuy6himI5SfJX_LPepntyhU20gCD5xokfMeXs5-0S2Afa1m1PORnx31Reft9Pp7DPlsmKhiAtU8pGZdaMZdF-xFHynu0YPuPmoR-xCxM1Uk3s7LaEvzJ5TUMYkRD4RhX9OcRfn-Ha8ElrMjP2Ahdi21wSqWIe_mlpb3grAvOORNWY2EdiCvsrOwZrxpvJEyNvDa3JV8SyhT9uBHkG90FxjiWYwugUJumPjBTqRv5nx4hegpAHAk8"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+<div class="relative z-10 h-full flex flex-col justify-between p-stack-md">
+<span class="font-label-sm text-label-sm text-white/70 uppercase tracking-widest">02 / INTERFACE</span>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-white uppercase mb-2">CORE CORE</h3>
+<div class="w-12 h-1 bg-primary-container"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-desktop py-stack-md flex flex-col md:flex-row justify-between items-center gap-gutter bg-background border-t border-outline-variant">
+<div class="font-headline-md text-headline-md font-black text-primary">LYP</div>
+<div class="flex gap-stack-md">
+<a class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant hover:text-white transition-colors" href="#">Instagram</a>
+<a class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant hover:text-white transition-colors" href="#">LinkedIn</a>
+<a class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant hover:text-white transition-colors" href="#">Dribbble</a>
+</div>
+<div class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant/60">
+            © 2024 LY PING. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const loader = document.getElementById('loader');
+        const body = document.body;
+
+        setTimeout(() => {
+            loader.classList.add('fade-out');
+            body.classList.add('loaded');
+            body.style.overflow = 'auto';
+            
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 300);
+        }, 2000);
+    });
+
+    document.querySelectorAll('.group').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-2px)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
+</script>
+</body></html>
