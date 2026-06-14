@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="container">
         <div className="navbar-inner">
-          <NavLink to="/" className="navbar-logo">LYP</NavLink>
+          <NavLink to="/" className="navbar-logo">YP</NavLink>
           <ul className="navbar-links">
             {NAV_LINKS.map(({ label, to }) => (
               <li key={to}>
